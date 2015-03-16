@@ -1,0 +1,251 @@
+
+@(parentpage: String, currentUser:Person)
+    @import plugins.com.feth.play.module.pa.providers.AuthProvider
+<!-- Navigation -->
+
+<nav class="navbar navbar-default navbar-static-top "  role="navigation" style="margin-bottom: 0">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle " data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+    
+    <ul class="nav navbar-top-links navbar-left">
+
+    </ul>
+
+    <!-- /.navbar-header -->
+
+    <ul class="nav navbar-top-links navbar-right" id="three">
+        <li class="dropdown msg">
+
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <i class="fa fa-comments fa-fw"></i> @if(DiscussionData.allNewComments(currentUser).size()>0){<span class="badge badge-info">@DiscussionData.allNewComments(currentUser).size()</span> }<i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-tasks" style="height: 300px; overflow-y: scroll">
+                @if(DiscussionData.allNewComments(currentUser).size() == 0){
+                    <li>
+                        <a href="@routes.Application.discussion()">
+                            <div><strong>No New Comments</strong></div>
+                            <div>
+                                Nothing to see here!
+                            </div>
+                        </a>
+                    </li>
+                }
+            @defining(DiscussionData.allNewComments(currentUser)) { comments =>
+                @for(comment <- comments){
+                    <li>
+                        <a href="@routes.DiscussionData.seen(comment.cid)">
+                            <div>
+                                <small class="pull-right text-muted" style="margin: 2px">
+                                    <i class="fa fa-clock-o fa-fw" title="@comment.date"></i>
+                                </small>
+                                <strong>@comment.subject</strong>
+                                @if(comment.content.size <= 10){
+                                    <p>@comment.person.name says: @comment.content</p>
+                                } else {
+                                    <p>@comment.person.name says: @comment.content.substring(0, 10)...</p>
+                                }
+                            </div>
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                }
+            }
+            </ul>
+
+                <!-- /.dropdown-tasks -->
+        </li>
+            <!-- /.dropdown -->
+        <!--TASKS-->
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <i class="fa fa-wrench fa-fw"></i> @if(Task.allUndoneTask(currentUser).size()>0){<span class="badge badge-info">@Task.allUndoneTask(currentUser).size()</span> }<i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-tasks" style="height: 300px; overflow-y: scroll">
+                @if(Task.allUndoneTask(currentUser).size() == 0){
+                <li>
+                    <a href="@routes.Application.task()">
+                        <div><strong>No Tasks</strong></div>
+                        <div>
+                             Make a new one or give yourself an applause!
+
+                        </div>
+                    </a>
+                </li>
+            }
+                @Task.allUndoneTask(currentUser).map { t =>
+                    <li>
+                        <a href="@routes.Application.task()">
+                            <div>
+                                <p>
+                                    <strong>@t.name</strong>
+                                    <span class="pull-right text-muted">Due : @t.dueDate.toString.substring(0,10)</span>
+                                </p>
+
+
+                            </div>
+
+
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                }
+            </ul>
+
+            <!-- /.dropdown-tasks -->
+        </li>
+        <!-- /.dropdown -->
+        @*<li class="dropdown">*@
+            @*<a class="dropdown-toggle" data-toggle="dropdown" href="#">*@
+                @*<i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>*@
+            @*</a>*@
+            @*<ul class="dropdown-menu dropdown-alerts">*@
+                @*<li>*@
+                    @*<a href="#">*@
+                        @*<div>*@
+                            @*<i class="fa fa-comment fa-fw"></i> New Comment*@
+                            @*<span class="pull-right text-muted small">4 minutes ago</span>*@
+                        @*</div>*@
+                    @*</a>*@
+                @*</li>*@
+                @*<li class="divider"></li>*@
+                @*<li>*@
+                    @*<a href="#">*@
+                        @*<div>*@
+                            @*<i class="fa fa-twitter fa-fw"></i> 3 New Followers*@
+                            @*<span class="pull-right text-muted small">12 minutes ago</span>*@
+                        @*</div>*@
+                    @*</a>*@
+                @*</li>*@
+                @*<li class="divider"></li>*@
+                @*<li>*@
+                    @*<a href="#">*@
+                        @*<div>*@
+                            @*<i class="fa fa-envelope fa-fw"></i> Message Sent*@
+                            @*<span class="pull-right text-muted small">4 minutes ago</span>*@
+                        @*</div>*@
+                    @*</a>*@
+                @*</li>*@
+                @*<li class="divider"></li>*@
+                @*<li>*@
+                    @*<a href="#">*@
+                        @*<div>*@
+                            @*<i class="fa fa-tasks fa-fw"></i> New Task*@
+                            @*<span class="pull-right text-muted small">4 minutes ago</span>*@
+                        @*</div>*@
+                    @*</a>*@
+                @*</li>*@
+                @*<li class="divider"></li>*@
+                @*<li>*@
+                    @*<a href="#">*@
+                        @*<div>*@
+                            @*<i class="fa fa-upload fa-fw"></i> Server Rebooted*@
+                            @*<span class="pull-right text-muted small">4 minutes ago</span>*@
+                        @*</div>*@
+                    @*</a>*@
+                @*</li>*@
+                @*<li class="divider"></li>*@
+                @*<li>*@
+                    @*<a class="text-center" href="#">*@
+                        @*<strong>See All Alerts</strong>*@
+                        @*<i class="fa fa-angle-right"></i>*@
+                    @*</a>*@
+                @*</li>*@
+            @*</ul>*@
+            @*<!-- /.dropdown-alerts -->*@
+        @*</li>*@
+        <!-- /.dropdown -->
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                 <i class="fa fa-user fa-fw"></i> <span > @currentUser.name </span> <i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-user">
+                <li>
+                    <a href="@AuthProvider.Registry.get("mendeley").getUrl()">
+                        @if(currentUser.mendeleyConnected){
+                            <img src="@routes.Assets.at("icons/mendeley-24-black.png")" style="margin-left: -3px; padding-right: 1px">Sync Mendeley Library...
+                        }else{
+                            <img src="@routes.Assets.at("icons/mendeley-24-black.png")" style="margin-left: -3px; padding-right: 1px">Link Mendeley Library...
+                        }
+                    </a>
+                </li>
+                @*<li><a href="#" data-toggle="modal" data-target="#deleteAccount"><i class="fa fa-close fa-fw"></i> Delete account...</a></li>*@
+                <li class="divider"></li>
+                <li><a href="@routes.Authentication.OAuthLogout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                </li>
+            </ul>
+            <!-- /.dropdown-user -->
+        </li>
+
+        <!-- /.dropdown -->
+    </ul>
+    @*Delete Account Confirmation Modal*@
+    @*template.smallmodal("deleteAccount")("danger")("Delete account " + currentUser.name) {*@
+        @*<p style="text-align: center">Are you sure you want to delete account @currentUser.name?</p>*@
+        @*<div class="btn-group col-xs-6" role="group" style="margin:20px 0px 0px 0px">*@
+            @*<a type="button" class="btn btn-default col-xs-12" data-dismiss="modal">Cancel</a>*@
+        @*</div>*@
+        @*<div class="btn-group col-xs-6" role="group" style="margin:20px 0px 0px 0px">*@
+            @*<a class="btn btn-danger col-xs-12" href="@routes.PersonData.deleteAccount()">Delete me!</a>*@
+        @*</div>*@
+    @*}*@
+    <!-- /.navbar-top-links -->
+    <!-- Side Bar -->
+    <div class="navbar-default sidebar"  role="navigation">
+        <div class="sidebar-nav navbar-collapse">
+            <script>
+            (function() {
+            var cx = '015131041368954121162:l0lfe2cxh70';
+            var gcse = document.createElement('script');
+            gcse.type = 'text/javascript';
+            gcse.async = true;
+            gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+            '//www.google.com/cse/cse.js?cx=' + cx;
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(gcse, s);
+            })();
+//            jQuery(".gsc-input").attr("placeholder", "Rechercher");
+            </script>
+            <ul class="nav nav-tabs nav-stacked two" id="side-menu">
+                <li class="sidebar-search">
+                        <label style="color: #1f6377 ; font-size: smaller; ">Search an article: </label>
+                    <gcse:searchbox-only></gcse:searchbox-only>
+
+               </li>
+                <li>
+                    <a @if(parentpage.equals("dashboard")){class="active"} href="@routes.Application.index()"><i class="fa fa-tachometer fa-fw"></i> Dashboard</a>
+                </li>
+                <li id="four">
+                    <a @if(parentpage.equals("project")){class="active"} href="@routes.Application.project()"><i class="fa fa-line-chart fa-fw" ></i> Projects</a>
+
+                    <!-- /.nav-second-level -->
+
+                </li>
+                <li id="five">
+                    <a @if(parentpage.equals("calendar")){class="active"} href="@routes.CalendarData.calendar()"><i class="fa fa-calendar fa-fw" ></i> Calendar</a>
+                </li>
+                <li id="six">
+                    <a @if(parentpage.equals("discussion")){class="active"} href="@routes.Application.discussion()"><i class="fa fa-comments fa-fw"i ></i> Discussions</a>
+
+                </li>
+                <li id="seven">
+                    <a @if(parentpage.equals("task")){class="active"} href="@routes.Application.task()"><i class="fa fa-wrench fa-fw" ></i> Tasks</a>
+
+                    <!-- /.nav-second-level -->
+                </li>
+                <li id="eight">
+                    <a @if(parentpage.equals("suggestion")){class="active"} href="@routes.Application.suggestions()"><i class="fa fa-lightbulb-o fa-fw" ></i> Suggestions & Tips</a>
+
+                    <!-- /.nav-second-level -->
+                </li>
+            </ul>
+        </div>
+        <!-- /.sidebar-collapse -->
+    </div>
+    <!-- /.navbar-static-side -->
+</nav>
