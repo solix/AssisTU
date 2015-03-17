@@ -1,0 +1,12 @@
+@(currentUser: Person, project: Project)
+<div class="container-fluid" style="text-align: center; margin: 1% 0">
+    <div role="tabpanel">
+        <ul class="nav nav-tabs">
+            @for(p <- PersonData.findActiveProjects) {
+                <li role="presentation" @if(p.id == project.id){class="active"} style="width: 18%; text-overflow : ellipsis ; overflow : hidden ; white-space : nowrap">
+                    <a href="#project@p.id" data-toggle="tab">@p.folder</a>
+                </li>
+            }
+        </ul>
+    </div>
+</div>

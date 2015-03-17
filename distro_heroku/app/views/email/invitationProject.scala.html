@@ -1,0 +1,15 @@
+@(invitee:Person,host:Person,p : Project)
+
+<h2>Hello @invitee.name</h2>
+<p>host.name has invited you to join the Project </p>
+<p>Project details:</p>
+<ul>
+  <li>Project title: @p.name</li>
+  <li>Project description: @p.description</li>
+</ul>
+
+please click<a href=@routes.Application.project()> here  </a>to go to the link.
+
+Cheers,
+
+assistU Team

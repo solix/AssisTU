@@ -1,0 +1,21 @@
+@(reciever: Person, sender: Person, project: Project, comment: String)
+Hello @reciever.name,
+<br />
+<br />
+<p>
+    I would like to inform you that @sender.name has left a new message for you on the discussion page of your project "@project.name".
+</p>
+<p>
+    Here's what he has to say:
+</p>
+<p>
+    @comment
+</p>
+<br>
+@*<p>*@
+    @*In case you would like to leave a reply on this, please follow <a href="@url">this link</a> and see his message.*@
+@*</p>*@
+<p>
+    Cheers,<br />
+    <i>AssistU</i>
+</p>

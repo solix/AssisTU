@@ -1,0 +1,20 @@
+@(project: Project)
+<div class="btn-group pull-right" role="group" style="margin:0 0">
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#pcUpload@project.id">
+        <i class="fa fa-cloud-upload fa-fw"></i> Upload a file...
+    </button>
+</div>
+@template.smallmodal("pcUpload"+project.id.toString)("success")("Upload Files") {
+    <h4>Upload your document here!</h4>
+    @helper.form(action = routes.DocumentData.upload(project.id), 'enctype -> "multipart/form-data") {
+        <div class="form-inline">
+            <div class="form-group">
+                <input type="file" name="upload" id="js-upload-files" multiple>
+            </div>
+            <button type="submit" class="btn btn-sm btn-primary" id="js-upload-submit">Upload files</button>
+        </div>
+        @*<button type="submit" class="btn btn-sm btn-primary" id="js-upload-submit">Upload files</button>*@
+        @*</div>*@
+
+    }
+}

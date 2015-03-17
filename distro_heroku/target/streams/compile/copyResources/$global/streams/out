@@ -1,0 +1,13 @@
+[0m[[0mdebug[0m] [0mCopy resource mappings: [0m
+[0m[[0mdebug[0m] [0m	(/Users/soheil/Documents/git/asistu/conf/application.conf,/Users/soheil/Documents/git/asistu/target/scala-2.11/classes/application.conf)[0m
+[0m[[0mdebug[0m] [0m	(/Users/soheil/Documents/git/asistu/conf/application.conf~,/Users/soheil/Documents/git/asistu/target/scala-2.11/classes/application.conf~)[0m
+[0m[[0mdebug[0m] [0m	(/Users/soheil/Documents/git/asistu/conf/evolutions,/Users/soheil/Documents/git/asistu/target/scala-2.11/classes/evolutions)[0m
+[0m[[0mdebug[0m] [0m	(/Users/soheil/Documents/git/asistu/conf/initial-data.yml,/Users/soheil/Documents/git/asistu/target/scala-2.11/classes/initial-data.yml)[0m
+[0m[[0mdebug[0m] [0m	(/Users/soheil/Documents/git/asistu/conf/play-authenticate,/Users/soheil/Documents/git/asistu/target/scala-2.11/classes/play-authenticate)[0m
+[0m[[0mdebug[0m] [0m	(/Users/soheil/Documents/git/asistu/conf/play.plugins,/Users/soheil/Documents/git/asistu/target/scala-2.11/classes/play.plugins)[0m
+[0m[[0mdebug[0m] [0m	(/Users/soheil/Documents/git/asistu/conf/routes,/Users/soheil/Documents/git/asistu/target/scala-2.11/classes/routes)[0m
+[0m[[0mdebug[0m] [0m	(/Users/soheil/Documents/git/asistu/conf/smtp.conf,/Users/soheil/Documents/git/asistu/target/scala-2.11/classes/smtp.conf)[0m
+[0m[[0mdebug[0m] [0m	(/Users/soheil/Documents/git/asistu/conf/evolutions/default,/Users/soheil/Documents/git/asistu/target/scala-2.11/classes/evolutions/default)[0m
+[0m[[0mdebug[0m] [0m	(/Users/soheil/Documents/git/asistu/conf/evolutions/default/1.sql,/Users/soheil/Documents/git/asistu/target/scala-2.11/classes/evolutions/default/1.sql)[0m
+[0m[[0mdebug[0m] [0m	(/Users/soheil/Documents/git/asistu/conf/play-authenticate/deadbolt.conf,/Users/soheil/Documents/git/asistu/target/scala-2.11/classes/play-authenticate/deadbolt.conf)[0m
+[0m[[0mdebug[0m] [0m	(/Users/soheil/Documents/git/asistu/conf/play-authenticate/mine.conf,/Users/soheil/Documents/git/asistu/target/scala-2.11/classes/play-authenticate/mine.conf)[0m

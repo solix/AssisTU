@@ -1,0 +1,68 @@
+@(title: String)(currentUser:Person,eventForm: Form[Event],events : List[Event] )
+  @import helper._
+  @import helper.twitterBootstrap
+
+<head>
+  @linkLoader.headlinks(title)
+  <link rel="stylesheet" media="screen" href='@routes.Assets.at("fullcalendar-1.5.3/fullcalendar/fullcalendar.css")'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js" type="text/javascript"></script>
+  <script src='@routes.Assets.at("bootstrap-2.0.2/js/bootstrap.min.js")' type="text/javascript"></script>
+  <script src='@routes.Assets.at("fullcalendar-1.5.3/fullcalendar/fullcalendar.min.js")' type="text/javascript"></script>
+  <script src='@routes.Assets.at("javascripts/renderCalendar.js")' type="text/javascript"></script>
+  <script src='@routes.Assets.at("bootstrap-2.0.2/js/bootstrap.min.js")' type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div id="wrapper" >
+
+  @dashboard("calendar", currentUser)
+    <div id="page-wrapper">
+        @template.headericon("fa fa-calendar fa-5x")
+
+  <a  class="btn btn-default btn=sm" href="@routes.CalendarData.list(currentUser.id)">
+    <span class="fa fa-bars"></span> View as List
+  </a>
+
+    <hr class="hr" style="margin-top: 10px">
+
+        <div style="display: none;">
+          <form action="@routes.CalendarData.addByAjax(currentUser.id)" method="POST" id="eventFormNew">
+            <input type="text" name="title" id="newTitle"/>
+            <input type="text" name="description" id="newDescription"/>
+            <input type="text" name="start_date" id="newStart"/>
+            <input type="text" name="end_date" id="newEnd"/>
+            <input type="text" name="allDay" id="newAllDay"/>
+          </form>
+
+          <br/>
+
+          <form action="@routes.CalendarData.move()" method="POST" id="eventFormMove">
+            <input type="text" name="id" id="moveId"/>
+            <input type="text" name="dayDelta" id="moveDayDelta"/>
+            <input type="text" name="minuteDelta" id="moveMinuteDelta"/>
+            <input type="text" name="allDay" id="moveAllDay"/>
+          </form>
+
+          <form action="@routes.CalendarData.resize()" method="POST" id="eventFormResize">
+            <input type="text" name="id" id="resizeId"/>
+            <input type="text" name="dayDelta" id="resizeDayDelta"/>
+            <input type="text" name="minuteDelta" id="resizeMinuteDelta"/>
+          </form>
+
+        </div>
+
+        <div  id='calendar'></div>
+    </div>
+
+</div>
+
+  
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  
+<!--sb-Admin-->
+<script src="@routes.Assets.at("javascripts/sb-admin-2.js")"></script>
+<script src="@routes.Assets.at("javascripts/plugins/metisMenu/metisMenu.min.js")"></script>
+
+</body>

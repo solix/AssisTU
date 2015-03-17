@@ -1,0 +1,91 @@
+2015-02-17 22:25:08,150 - [INFO] - from play in pool-9-thread-4 
+Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+
+2015-02-17 22:26:37,317 - [ERROR] - from application in New I/O worker #1 
+
+
+! @6l88pb1j5 - Internal server error, for (GET) [/] ->
+
+play.api.Configuration$$anon$1: Configuration error[DB plugin is not registered.]
+	at play.api.Configuration$.play$api$Configuration$$configError(Configuration.scala:94) ~[play_2.11-2.3.6.jar:2.3.6]
+	at play.api.Configuration.reportError(Configuration.scala:743) ~[play_2.11-2.3.6.jar:2.3.6]
+	at play.Configuration.reportError(Configuration.java:310) ~[play_2.11-2.3.6.jar:2.3.6]
+	at play.db.ebean.EbeanPlugin.onStart(EbeanPlugin.java:56) ~[play-java-ebean_2.11-2.3.6.jar:2.3.6]
+	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:91) ~[play_2.11-2.3.6.jar:2.3.6]
+	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:91) ~[play_2.11-2.3.6.jar:2.3.6]
+	at scala.collection.immutable.List.foreach(List.scala:383) ~[scala-library-2.11.1.jar:na]
+	at play.api.Play$$anonfun$start$1.apply$mcV$sp(Play.scala:91) ~[play_2.11-2.3.6.jar:2.3.6]
+	at play.api.Play$$anonfun$start$1.apply(Play.scala:91) ~[play_2.11-2.3.6.jar:2.3.6]
+	at play.api.Play$$anonfun$start$1.apply(Play.scala:91) ~[play_2.11-2.3.6.jar:2.3.6]
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:21) ~[play_2.11-2.3.6.jar:2.3.6]
+	at play.api.Play$.start(Play.scala:90) ~[play_2.11-2.3.6.jar:2.3.6]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:157) ~[play_2.11-2.3.6.jar:2.3.6]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:130) ~[play_2.11-2.3.6.jar:2.3.6]
+	at scala.Option.map(Option.scala:145) ~[scala-library-2.11.1.jar:na]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:130) ~[play_2.11-2.3.6.jar:2.3.6]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:128) ~[play_2.11-2.3.6.jar:2.3.6]
+	at scala.util.Success.flatMap(Try.scala:230) ~[scala-library-2.11.1.jar:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:128) ~[play_2.11-2.3.6.jar:2.3.6]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:120) ~[play_2.11-2.3.6.jar:2.3.6]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library-2.11.1.jar:na]
+Caused by: java.lang.Exception: DB plugin is not registered.
+	at play.api.db.DB$.play$api$db$DB$$error(DB.scala:123) ~[play-jdbc_2.11-2.3.6.jar:2.3.6]
+	at play.api.db.DB$$anonfun$getDataSource$2.apply(DB.scala:142) ~[play-jdbc_2.11-2.3.6.jar:2.3.6]
+	at play.api.db.DB$$anonfun$getDataSource$2.apply(DB.scala:142) ~[play-jdbc_2.11-2.3.6.jar:2.3.6]
+	at scala.Option.getOrElse(Option.scala:120) ~[scala-library-2.11.1.jar:na]
+	at play.api.db.DB$.getDataSource(DB.scala:142) ~[play-jdbc_2.11-2.3.6.jar:2.3.6]
+	at play.api.db.DB.getDataSource(DB.scala) ~[play-jdbc_2.11-2.3.6.jar:2.3.6]
+	at play.db.DB.getDataSource(DB.java:25) ~[play-java-jdbc_2.11-2.3.6.jar:2.3.6]
+	at play.db.ebean.EbeanPlugin.onStart(EbeanPlugin.java:54) ~[play-java-ebean_2.11-2.3.6.jar:2.3.6]
+	... 23 common frames omitted
+
+2015-02-17 22:26:37,317 - [ERROR] - from application in New I/O worker #2 
+
+
+! @6l88pb1j5 - Internal server error, for (GET) [/login] ->
+
+play.api.Configuration$$anon$1: Configuration error[DB plugin is not registered.]
+	at play.api.Configuration$.play$api$Configuration$$configError(Configuration.scala:94) ~[play_2.11-2.3.6.jar:2.3.6]
+	at play.api.Configuration.reportError(Configuration.scala:743) ~[play_2.11-2.3.6.jar:2.3.6]
+	at play.Configuration.reportError(Configuration.java:310) ~[play_2.11-2.3.6.jar:2.3.6]
+	at play.db.ebean.EbeanPlugin.onStart(EbeanPlugin.java:56) ~[play-java-ebean_2.11-2.3.6.jar:2.3.6]
+	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:91) ~[play_2.11-2.3.6.jar:2.3.6]
+	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:91) ~[play_2.11-2.3.6.jar:2.3.6]
+	at scala.collection.immutable.List.foreach(List.scala:383) ~[scala-library-2.11.1.jar:na]
+	at play.api.Play$$anonfun$start$1.apply$mcV$sp(Play.scala:91) ~[play_2.11-2.3.6.jar:2.3.6]
+	at play.api.Play$$anonfun$start$1.apply(Play.scala:91) ~[play_2.11-2.3.6.jar:2.3.6]
+	at play.api.Play$$anonfun$start$1.apply(Play.scala:91) ~[play_2.11-2.3.6.jar:2.3.6]
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:21) ~[play_2.11-2.3.6.jar:2.3.6]
+	at play.api.Play$.start(Play.scala:90) ~[play_2.11-2.3.6.jar:2.3.6]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:157) ~[play_2.11-2.3.6.jar:2.3.6]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:130) ~[play_2.11-2.3.6.jar:2.3.6]
+	at scala.Option.map(Option.scala:145) ~[scala-library-2.11.1.jar:na]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:130) ~[play_2.11-2.3.6.jar:2.3.6]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:128) ~[play_2.11-2.3.6.jar:2.3.6]
+	at scala.util.Success.flatMap(Try.scala:230) ~[scala-library-2.11.1.jar:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:128) ~[play_2.11-2.3.6.jar:2.3.6]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:120) ~[play_2.11-2.3.6.jar:2.3.6]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library-2.11.1.jar:na]
+Caused by: java.lang.Exception: DB plugin is not registered.
+	at play.api.db.DB$.play$api$db$DB$$error(DB.scala:123) ~[play-jdbc_2.11-2.3.6.jar:2.3.6]
+	at play.api.db.DB$$anonfun$getDataSource$2.apply(DB.scala:142) ~[play-jdbc_2.11-2.3.6.jar:2.3.6]
+	at play.api.db.DB$$anonfun$getDataSource$2.apply(DB.scala:142) ~[play-jdbc_2.11-2.3.6.jar:2.3.6]
+	at scala.Option.getOrElse(Option.scala:120) ~[scala-library-2.11.1.jar:na]
+	at play.api.db.DB$.getDataSource(DB.scala:142) ~[play-jdbc_2.11-2.3.6.jar:2.3.6]
+	at play.api.db.DB.getDataSource(DB.scala) ~[play-jdbc_2.11-2.3.6.jar:2.3.6]
+	at play.db.DB.getDataSource(DB.java:25) ~[play-java-jdbc_2.11-2.3.6.jar:2.3.6]
+	at play.db.ebean.EbeanPlugin.onStart(EbeanPlugin.java:54) ~[play-java-ebean_2.11-2.3.6.jar:2.3.6]
+	... 23 common frames omitted
+
