@@ -18,7 +18,7 @@ After following these steps you will notice the system files begins to compile a
 
 
 ### Deployment: 
-There are various ways of configuring the application according to the service used to deploy the application. We will here explain a general configuartion and show you how to deploy the application on [Heroku](https://www.heroku.com/).
+There are various ways of configuring the application according to the service used to deploy the application. We will here explain a general configuartion and later on show you an example of how to deploy the application on [Heroku](https://www.heroku.com/).
 #### General Steps
 If you are deploying on Heroku skip this section.
 
@@ -54,6 +54,6 @@ Now push the application to Heroku:
         git push heroku master
         
 4. wait for Heroku to build the app with SBT(build file)
-5. Open the application now running on your browserby typing :
+5. Open the application now running on your browser by typing :
 
         heroku open
